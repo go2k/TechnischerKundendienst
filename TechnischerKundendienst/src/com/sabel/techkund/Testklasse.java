@@ -6,6 +6,5 @@ public class Testklasse {
 		
 		Kundendienstsystem kds = new Kundendienstsystem();
 		kds.starten();
-		
 	}
 }
