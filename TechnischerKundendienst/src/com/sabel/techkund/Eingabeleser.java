@@ -1,5 +1,7 @@
 package com.sabel.techkund;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 /**
  * Ein Eingabeleser liest eingetippten Text von der Konsole.
@@ -17,7 +19,7 @@ public class Eingabeleser
      */
     public Eingabeleser()
     {
-        scanner = new Scanner(System.in);;
+        scanner = new Scanner(System.in);
     }
 
     /**
@@ -25,7 +27,7 @@ public class Eingabeleser
      *
      * @return  Eine Zeichenkette, die vom Benutzer eingetippt wurde.
      */
-    public String gibEingabe() 
+    public String gibEingabe2() 
     {
         System.out.print("> ");   // Eingabebereitschaft anzeigen
         String eingabezeile = scanner.nextLine();
@@ -33,4 +35,22 @@ public class Eingabeleser
         return eingabezeile;
     }
 
+    public Set<String> gibEingabe() 
+    {
+        System.out.print("> ");   // Eingabebereitschaft anzeigen
+        String eingabezeile = scanner.nextLine();
+        String[] teile = eingabezeile.split("[ ,.!?;:-]");
+
+        HashSet<String> woerter = new HashSet<>();
+         for (String wort : teile) {
+			if (wort.length() > 0) {
+				woerter.add(wort);
+			}
+		}        
+        return woerter;
+    }
+    
+    
+
+    
 }
