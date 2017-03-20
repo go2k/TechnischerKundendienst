@@ -38,7 +38,9 @@ public class Beantworter {
 	public String generiereAntwort(Set<String> eingabe) {
 
 		for (String wort : eingabe) {
-			return map.get(wort);
+			if (wort != null) {
+				return map.get(wort);
+			}
 		}
 
 		return antworten.get(rnd.nextInt(antworten.size()));
